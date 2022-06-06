@@ -3,19 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 	
 	<!-- font-family: 'Cairo', sans-serif;
 	font-family: 'Lato', sans-serif;
 	font-family: 'Roboto', sans-serif; -->
-	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Lato:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Lato:wght@400;500;600;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 	<title>Ship management</title>
 </head>
 <body> 
-	<div class="header">
+	<div class="header" id="main">
 		
 		<div class="header_top">
 			<div class="header_top_up">
@@ -30,11 +31,17 @@
 					<a class="nav_link" href="#contacts">Contact us</a>
 					<div class="nav_quote"><a class="nav_link_last" href="#quote">Get a quote</a></div>
 				</nav>
+
+				<!-- Nav - burger menu button -->
+				<div class="nav_toggle">
+					<span class="toggle_item"></span>
+				</div>
+
 			</div>
 			<div class="header_top_center">
 
 				<div class="top_center_text">
-					<h1>Fast & Safe Transportation</h1>
+					<h1>Fast & Safe <br>Transportation</h1>
 					<p>Our effective transport, logistics and supply chain solutions provide flexibility and predictability – supporting your business requirements.</p>
 				</div>
 
@@ -53,10 +60,11 @@
 		
 	</div> <!-- header -->
 	
+
+
 	<div class="services">
 		<div class="services_container">
 
-			<!-- Заголовок, немного текста + меню услуг -->
 			<div class="services_left">
 				
 				<div class="services_text">
@@ -67,53 +75,197 @@
 
 				<div class="services_menu">
 					<div class="service_block">
-						<img src="img/icon_land.png" alt="Land Transport">
+						<div class="service_block_img"><img src="img/icon_land.png" alt="Land Transport"></div>
 						<h1>Land Transport</h1>
 					</div>
 					<div class="service_block">
-						<img src="img/icon_air.png" alt="Air Freight">
+						<div class="service_block_img"><img src="img/icon_air.png" alt="Air Freight"></div>
 						<h1>Air Freight</h1>
 					</div>
 					<div class="service_block">
-						<img src="img/icon_ocean.png" alt="Ocean Freight">
+						<div class="service_block_img"><img src="img/icon_ocean.png" alt="Ocean Freight"></div>
 						<h1>Ocean Freight</h1>
 					</div>
 					<div class="service_block">
-						<img src="img/icon_wh.png" alt="Warehousing">
+						<div class="service_block_img"><img src="img/icon_wh.png" alt="Warehousing"></div>
 						<h1>Warehousing</h1>
 					</div>
 					<div class="service_block">
-						<img src="img/icon_supply.png" alt="Supply Chain Solutions">
+						<div class="service_block_img"><img src="img/icon_supply.png" alt="Supply Chain Solutions"></div>
 						<h1>Supply Chain Solutions</h1>
 					</div>
 					<div class="service_block">
-						<img src="img/icon_smallB.png" alt="Small Business Solutions">
+						<div class="service_block_img"><img src="img/icon_smallB.png" alt="Small Business Solutions"></div>
 						<h1>Small Business Solutions</h1>
 					</div>
-				</div>
-
+				</div> <!-- services_container -->
 			</div>
 
-			<!-- Картинка справа + выпадающий текст услуги с readmore BTN -->
-			<div class="services_img">
-
-				<div class="transparent_blue"></div>
-
-				<div class="services_readMore">
-					<div class="readMore_text" id="land">With 430 land transportation branches across Europe, DB Schenker’s land transport products and services cover an extensive network. From road to rail, our surface freight solutions get your shipments where they need to be, when they need to be there.</div>
-					<div class="readMore_text none" id="air">Air - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-					<div class="readMore_text none" id="ocean">Ocean - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-					<div class="readMore_text none" id="warehouse">Warehousing - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-					<div class="readMore_text none" id="supply">Supply chain - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-					<div class="readMore_text none" id="smallBusiness">Small business - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-
-
-					<a class="readMore_btn" href="">READ MORE</a>
-
+		
+					<!-- Картинка справа + выпадающий текст услуги с readmore BTN -->
+					<div class="services_img">
+		
+						<div class="transparent_blue"></div>
+		
+						<div class="services_readMore">
+							<div class="readMore_text" id="land">With 430 land transportation branches across Europe, DB Schenker’s land transport products and services cover an extensive network. From road to rail, our surface freight solutions get your shipments where they need to be, when they need to be there.</div>
+							<div class="readMore_text none" id="air">Air - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="ocean">Ocean - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="warehouse">Warehousing - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="supply">Supply chain - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="smallBusiness">Small business - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+		
+		
+							<a class="readMore_btn" href="">READ MORE</a>
+		
+						</div>
+					</div>
 				</div>
+			</div>
+
+
+	<!-- CAREERS - коробка на 100 ВН-->
+	<div class="careers">
+		<!-- внутренняя коробка, прижата вправо -->
+		<div class="careers_container">
+			<!-- картинка слева -->
+			<div class="careers_img"></div>
+			<!-- фон справа  -->
+
+			<!-- Background color  -->
+			<div class="careers_backgr"></div>
+
+			<!-- див с текстом и кнопкой -->
+			<div class="careers_inner">
+				<div class="careers_text">
+					<h1><span>C</span>areers</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor, nibh commodo nunc ac. <br>Est egestas praesent dictum habitant auctor etiam.</p>
+				</div>
+				<a class="apply_btn" href="">Apply Now</a>
 			</div>
 		</div>
 	</div>
 
+
+	<div class="media">
+		<div class="news_header"><span>L</span>atest News</div>
+
+		<div class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide">
+					<div class="news_img"><a href=""><img src="img/news_img/1.png" alt=""></a></div>
+					<h6>News</h6>
+					<h1>1-Lorem ipsum dolor sit amet</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium interdum libero eu sagittis. Morbi efficitur, quam eget volutpat tincidunt</p>
+					<a href="">Read More ...</a>
+				</div> <!-- 1 -->
+
+				<div class="swiper-slide">
+					<div class="news_img"><a href=""><img src="img/news_img/2.png" alt=""></a></div>
+					<h6>News</h6>
+					<h1>2-Lorem ipsum dolor sit amet</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium interdum libero eu sagittis. Morbi efficitur, quam eget volutpat tincidunt</p>
+					<a href="">Read More ...</a>
+				</div> <!-- 2 -->
+
+				<div class="swiper-slide">
+					<div class="news_img"><a href=""><img src="img/news_img/3.png" alt=""></a></div>
+					<h6>News</h6>
+					<h1>3-Lorem ipsum dolor sit amet</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium interdum libero eu sagittis. Morbi efficitur, quam eget volutpat tincidunt</p>
+					<a href="">Read More ...</a>
+				</div> <!-- 3 -->
+
+				<div class="swiper-slide">
+					<div class="news_img"><a href=""><img src="img/news_img/4.jpeg" alt=""></a></div>
+					<h6>News</h6>
+					<h1>4-Lorem ipsum dolor sit amet</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium interdum libero eu sagittis. Morbi efficitur, quam eget volutpat tincidunt</p>
+					<a href="">Read More ...</a>
+				</div> <!-- 4 -->
+
+			</div> <!-- swiper-wrapper -->
+
+			<!-- pagination -->
+			<div class="swiper-pagination"></div>
+		  
+			<!-- navigation buttons -->
+			<!-- <div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div> -->
+
+		</div> <!-- swiper -->
+	</div>
+
+
+	<!-- Contacts -->
+	<footer>
+		<div class="footer_container">
+
+			<div class="footer_inner">
+				<div class="footer_services">
+					<h1>Our Services</h1>
+					<a href="">Customs Brokerage</a>
+					<a href="">Transportation & Freight</a>
+					<a href="">Warehousing</a>
+					<a href="">Supply chain solutions & Third party logistics</a>
+					<a href="">Customised customer solutions</a>
+					<a href="">Small business solutions</a>
+				</div>
+				<div class="footer_contacts">
+					<h1>Our Contacts</h1>
+					<a href="">Jeddah, Saudi Arabia</a>
+					<a href="tel:+966920028275">Tel:  +966-920028275</a>
+					<a href="mailto:info@ntf-group.com">Email: info@ntf-group.com</a>
+					<h3>Opening Hours</h3>
+					<p>Sun-Thu: 8:00AM - 5:00PM</p>
+				</div>
+				<div class="footer_form">
+
+					<!-- name  -->
+					<div class="input-container ic2">
+						<input id="name" class="input" type="text" placeholder=" " />
+						<!-- <div class="cut"></div> -->
+						<label for="name" class="placeholder">Name</label>
+					</div>
+
+					<!-- email  -->
+					<div class="input-container ic2">
+						<input id="email" class="input" type="text" placeholder=" " />
+						<!-- <div class="cut"></div> -->
+						<label for="email" class="placeholder">Email</label>
+					</div>
+
+					<!-- phone  -->
+					<div class="input-container ic2">
+						<input id="phone" class="input" type="text" placeholder=" " />
+						<!-- <div class="cut cut-short"></div> -->
+						<label for="phone" class="placeholder">Phone</>
+					</div>
+
+					<!-- message  -->
+					<div class="input-container_message ic2">
+						<textarea class="input" id="message" name="message" rows="2" cols="50"></textarea>
+					</div>
+
+					<a class="submit" href="">Send</a>
+
+				</div>
+			</div>
+
+			<div class="footer_bottom">
+				<div class="terms_privacy">
+					<a href="">Terms & Conditions</a>   -   <a href="">Privacy Policy</a>
+				</div>
+				<div class="copyright">Copyright 2020 ©  NTF Group. All Rights Reserved</div>
+			</div>
+
+		</div>
+	</footer>
+	
+	
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
