@@ -23,7 +23,8 @@ menu_btn.addEventListener("click", function () {
         // чтобы сделать актив = крестик
         menu_btn.classList.add("active");
         // присвоить актив для header_nav
-        menu_nav.classList.add("active");
+        menu_nav.classList.add("open");
+        header_top_up.classList.add("open");
         header_slogan.classList.add("hide");
         header.classList.add("red");
         header_logo.classList.add("white");
@@ -32,7 +33,8 @@ menu_btn.addEventListener("click", function () {
         // чтобы убрать актив = три полоски
         menu_btn.classList.remove("active");
         // убрать актив для нав_2
-        menu_nav.classList.remove("active");
+        menu_nav.classList.remove("open");
+        header_top_up.classList.remove("open");
         // header_slogan.classList.remove("hide");
         // header.classList.remove("red");
     }
@@ -72,7 +74,7 @@ const swiper = new Swiper('.swiper', {
         spaceBetween: 20
         },
         // when window width is >= 640px
-        1200: {
+        1300: {
         slidesPerView: 3,
         spaceBetween: 30
         }
