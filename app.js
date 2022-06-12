@@ -1,8 +1,12 @@
 // header "fixed"
 const header_top_up = document.querySelector(".header_top_up");
-let mainWindow = document.getElementById("main").clientHeight;
+let mainWindow = document.getElementById("home").clientHeight;
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", headerFixed);
+// header "fixed" в случае, если обновят стр внизу
+document.addEventListener('DOMContentLoaded', headerFixed);
+
+function headerFixed () {
     let scrollPos = window.scrollY;
     if (scrollPos > mainWindow) {
         header_top_up.classList.add("fixed");
@@ -10,38 +14,107 @@ window.addEventListener("scroll", function () {
     if (scrollPos < mainWindow) {
         header_top_up.classList.remove("fixed");
     }
-});
+};
 
-// Для открывания бургер-меню (три полоски или Х)
+// Для открывания/закрывания бургер-меню (три полоски или Х)
 const menu_btn = document.querySelector(".nav_toggle");
 const menu_nav = document.querySelector(".header_nav");
-const header_slogan = document.querySelector(".header_slogan");
-const header_logo = document.querySelector(".header_logo");
+const nav_link = document.querySelectorAll(".nav_link");
 
-menu_btn.addEventListener("click", function () {
-    if (! menu_btn.classList.contains("active")){
-        // чтобы сделать актив = крестик
-        menu_btn.classList.add("active");
-        // присвоить актив для header_nav
-        menu_nav.classList.add("open");
-        header_top_up.classList.add("open");
-        header_slogan.classList.add("hide");
-        header.classList.add("red");
-        header_logo.classList.add("white");
-    }
-    else {
-        // чтобы убрать актив = три полоски
+menu_btn.addEventListener("click", menuToggle);
+
+nav_link.forEach(function(item){
+    item.addEventListener('click', menuToggle);
+});
+
+function menuToggle () {
+    // чтобы сделать актив = крестик
+    menu_btn.classList.toggle("active");
+    // присвоить актив для header
+    menu_nav.classList.toggle("open");
+    header_top_up.classList.toggle("open");
+};
+
+// закрыть бургер меню, если было открыто в момент изменения ширины экрана
+window.addEventListener('resize',function (){
+    console.log(window.innerWidth);
+    if (window.innerWidth > 1100) {
         menu_btn.classList.remove("active");
-        // убрать актив для нав_2
+        // присвоить актив для header
         menu_nav.classList.remove("open");
         header_top_up.classList.remove("open");
-        // header_slogan.classList.remove("hide");
-        // header.classList.remove("red");
     }
 });
 
 
+// АККОРДЕОН
+const accordionBtn = document.querySelector(".header_bottom_accordion");
+let accordionArrow = document.querySelector(".accordion_arrow");
+let accordionContent = document.querySelector(".accordion_content");
+let accordionItems = document.querySelectorAll('.accordion_content_item');
 
+accordionBtn.addEventListener('click', function(){
+    if (accordionContent.classList.contains('none')) {
+        accordionArrow.classList.remove('closed');
+        accordionArrow.classList.remove('chosen');
+        accordionArrow.classList.add('opened');
+        accordionContent.classList.remove('none');
+    } else {
+        accordionArrow.classList.remove('opened');
+            if (! accordionArrow.classList.contains('chosen')){
+                accordionArrow.classList.add('closed');
+            }
+        accordionContent.classList.add('none');
+    }
+});
+
+accordionItems.forEach(function(item){
+    item.addEventListener('click', function(){
+        document.querySelector(".accordion_text").innerHTML = item.getAttribute("data-accordion");
+
+        // accordionArrow.classList.remove('opened');
+        accordionArrow.classList.add('chosen');
+    });
+});
+
+
+
+// SEFVICES 
+const serviceBtns = document.querySelectorAll(".service_block");
+const servicesReadMore_text = document.querySelectorAll(".readMore_text");
+const serviceImages = document.querySelectorAll(".sevice_img");;
+
+serviceBtns.forEach(function(item){
+    item.addEventListener('mouseover', function(){
+        let imgID = item.getAttribute("data-serviceImg");
+        let contentID = item.getAttribute("data-serviceContent");
+        let currentImg = document.querySelector(imgID);
+        let currentContent = document.querySelector(contentID);
+        // console.log('contentID');
+        
+        // убираем синее со предыдущей кнопки
+        serviceBtns.forEach(function(item){
+            if (item.classList.contains('active')) {
+                item.classList.remove('active')
+            }
+        })
+
+        // делаем синей новую кнопку
+        item.classList.add('active');
+
+        // открываем прежде спрятанныую картинку
+        serviceImages.forEach((item) => {if (item.classList.contains('hide')){item.classList.remove('hide')};})
+            
+
+        // скрываем сперва все readMore_text
+        servicesReadMore_text.forEach((item) => {if (! item.classList.contains("none")){item.classList.add("none")};});
+
+        // выводим соответств. контент, убирая none
+        currentContent.classList.remove('none');
+        // убрать иконку
+        currentImg.classList.add('hide');
+    });
+});
 
 
 

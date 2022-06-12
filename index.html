@@ -16,7 +16,7 @@
 	<title>Ship management</title>
 </head>
 <body> 
-	<div class="header" id="main">
+	<div class="header" id="home">
 		
 		<div class="header_top">
 			<div class="header_top_up">
@@ -26,8 +26,8 @@
 					<a class="nav_link" href="#about">About us</a>
 					<a class="nav_link" href="#services">Services</a>
 					<a class="nav_link" href="#clients">Clients</a>
-					<a class="nav_link" href="#media">Media</a>
 					<a class="nav_link" href="#career">Career</a>
+					<a class="nav_link" href="#media">Media</a>
 					<a class="nav_link" href="#contacts">Contact us</a>
 					<div class="nav_quote"><a class="nav_link_last" href="#quote">Get a quote</a></div>
 				</nav>
@@ -53,10 +53,18 @@
 		<div class="header_bottom">
 			<div class="header_bottom_container">
 				<div class="header_bottom_text">Get an Instant Quote for Your Shipment</div>
+				
 				<div class="header_bottom_accordion">
 					<div class="accordion_text">Choose a mode of transportation</div>
-					<div class="accordion_arrow"></div>
+					<div class="accordion_arrow closed"></div>
+					<div class="accordion_content none">
+						<div class="accordion_content_item" data-accordion="Land transport">Land transport</div>
+						<div class="accordion_content_item" data-accordion="Railway transport">Railway transport</div>
+						<div class="accordion_content_item" data-accordion="Ship transport">Ship transport</div>
+						<div class="accordion_content_item" data-accordion="Air transport">Air transport</div>
+					</div>
 				</div>
+
 				<a class="header_bottom_btn" href="">TRANSPORT NOW</a>
 			</div>
 		</div>	
@@ -65,7 +73,7 @@
 	
 
 
-	<div class="services">
+	<div class="services" id="services">
 		<div class="services_container">
 
 			<div class="services_left">
@@ -77,28 +85,28 @@
 				</div>
 
 				<div class="services_menu">
-					<div class="service_block">
-						<div class="service_block_img"><img src="img/icon_land.png" alt="Land Transport"></div>
+					<div class="service_block active" data-serviceImg="#img-1" data-serviceContent="#content-1">
+						<div class="service_block_img"><img src="img/icon_land.png" alt="Land Transport" id="img-1" class="sevice_img"></div>
 						<h1>Land Transport</h1>
 					</div>
-					<div class="service_block">
-						<div class="service_block_img"><img src="img/icon_air.png" alt="Air Freight"></div>
+					<div class="service_block" data-serviceImg="#img-2" data-serviceContent="#content-2">
+						<div class="service_block_img"><img src="img/icon_air.png" alt="Air Freight" id="img-2" class="sevice_img"></div>
 						<h1>Air Freight</h1>
 					</div>
-					<div class="service_block">
-						<div class="service_block_img"><img src="img/icon_ocean.png" alt="Ocean Freight"></div>
+					<div class="service_block" data-serviceImg="#img-3" data-serviceContent="#content-3">
+						<div class="service_block_img"><img src="img/icon_ocean.png" alt="Ocean Freight"  id="img-3" class="sevice_img"></div>
 						<h1>Ocean Freight</h1>
 					</div>
-					<div class="service_block">
-						<div class="service_block_img"><img src="img/icon_wh.png" alt="Warehousing"></div>
+					<div class="service_block" data-serviceImg="#img-4" data-serviceContent="#content-4">
+						<div class="service_block_img"><img src="img/icon_wh.png" alt="Warehousing" id="img-4" class="sevice_img"></div>
 						<h1>Warehousing</h1>
 					</div>
-					<div class="service_block">
-						<div class="service_block_img"><img src="img/icon_supply.png" alt="Supply Chain Solutions"></div>
+					<div class="service_block" data-serviceImg="#img-5" data-serviceContent="#content-5">
+						<div class="service_block_img"><img src="img/icon_supply.png" alt="Supply Chain Solutions"  id="img-5" class="sevice_img"></div>
 						<h1>Supply Chain Solutions</h1>
 					</div>
-					<div class="service_block">
-						<div class="service_block_img"><img src="img/icon_smallB.png" alt="Small Business Solutions"></div>
+					<div class="service_block" data-serviceImg="#img-6" data-serviceContent="#content-6">
+						<div class="service_block_img"><img src="img/icon_smallB.png" alt="Small Business Solutions" id="img-6" class="sevice_img"></div>
 						<h1>Small Business Solutions</h1>
 					</div>
 				</div> <!-- services_container -->
@@ -111,12 +119,12 @@
 						<div class="transparent_blue"></div>
 		
 						<div class="services_readMore">
-							<div class="readMore_text" id="land">With 430 land transportation branches across Europe, DB Schenker’s land transport products and services cover an extensive network. From road to rail, our surface freight solutions get your shipments where they need to be, when they need to be there.</div>
-							<div class="readMore_text none" id="air">Air - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-							<div class="readMore_text none" id="ocean">Ocean - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-							<div class="readMore_text none" id="warehouse">Warehousing - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-							<div class="readMore_text none" id="supply">Supply chain - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
-							<div class="readMore_text none" id="smallBusiness">Small business - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text" id="content-1">With 430 land transportation branches across Europe, DB Schenker’s land transport products and services cover an extensive network. From road to rail, our surface freight solutions get your shipments where they need to be, when they need to be there.</div>
+							<div class="readMore_text none" id="content-2">Air - Lorem dolor consectetur ipsum sit amet,  adipiscing elit. Amet mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="content-3">Ocean - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem aliquam cursus nam nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="content-4">Warehousing - Amet ipsum dolor sit amet, consectetur adipiscing elit. Lorem nam mauris nibh aliquam rhoncus. Lorem aliquam cursus nam nunc, sed pellentesque eget adipiscing ipsum blanditrhoncus, elit consectetur rhoncus aliquam.</div>
+							<div class="readMore_text none" id="content-5">Supply chain -sit mauris. Lorem ipsum dolor  amet, consectetur adipiscing elit. Amet nibh aliquam rhoncus. Lorem aliquam cursus nam adipiscing nunc, sed pellentesque eget volutpat blandit.</div>
+							<div class="readMore_text none" id="content-6">Small business - aliquam. Amet mauris nibh  rhoncus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem aliquam cursus nam nunc, sed adipiscing pellentesque eget volutpat blandit.</div>
 		
 		
 							<a class="readMore_btn" href="">READ MORE</a>
@@ -128,7 +136,7 @@
 
 
 	<!-- CAREERS - коробка на 100 ВН-->
-	<div class="careers">
+	<div class="careers" id="career">
 		<!-- внутренняя коробка, прижата вправо -->
 		<div class="careers_container">
 			<!-- картинка слева -->
@@ -150,7 +158,7 @@
 	</div>
 
 
-	<div class="media">
+	<div class="media" id="media">
 		<div class="news_header"><span>L</span>atest News</div>
 
 		<div class="swiper">
@@ -204,7 +212,7 @@
 
 	<!-- Contacts -->
 	<footer>
-		<div class="footer_container">
+		<div class="footer_container" id="contacts">
 
 			<div class="footer_inner">
 				<div class="footer_services">
